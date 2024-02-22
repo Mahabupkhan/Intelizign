@@ -1,0 +1,40 @@
+
+<html>
+<head>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="Icons.css">
+    </head>
+    <body>
+       <div> <button id="subscribe" onclick="subscribe()">Subscribe</button></div>
+        <div><button id="bell">Click here to confirm</button></div>
+        <div onclick="follow()" id="follow">Follow</div>
+    </body>
+    </html>
+</head>
+<script>
+    function subscribe(){
+        var a=document.getElementById("subscribe");
+        if(a.innerHTML==="Subscribe"){
+            a.innerHTML="Subscribed!";
+        }
+        else{
+            a.innerHTML="Subscribe";
+        }
+    }
+    function follow(){
+        var a=document.getElementById("follow");
+        if(a.innerHTML==="Follow"){
+            a.innerHTML="Following";
+        }
+        else{
+            a.innerHTML="Follow"
+        }
+        a.classList.toggle("click");
+    }
+</script>
+</html>

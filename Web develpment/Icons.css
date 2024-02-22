@@ -1,0 +1,72 @@
+#subscribe{
+    height: 50px;
+    width: 150px;
+    color: white;
+    background-color: rgb(219, 47, 47);
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight:25px;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+    margin: 0%;
+    border: none;
+    position: absolute;
+    bottom: 5vh;
+    right:2vh;
+ 
+}
+#subscribe:hover{
+    background-color:black ;
+    color: white;
+}
+#bell{
+    height: 50px;
+    width: 300px;
+    color: azure;
+    background-color: black;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#bell:hover{
+    color: gold;
+    border-color: gold;
+    border: 0.4vh solid;
+    transition: border-color  color 0.2s;
+}
+#follow{
+    position: absolute;
+    top: 2vh;
+    right: 2vh;
+    height: 50px;
+    width: 150px;
+    border-radius: 27.5px;
+    border:solid;
+    border-color: #1DA1F2;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #1DA1F2;
+    background-color: white;
+    padding: 2px;
+    cursor: pointer;
+    line-height: 50px;
+    transition: background-color 0.2s ease;
+}
+#follow.click{
+    background-color: #1DA1F2;
+    color: white;
+}
+#follow.click2{
+    background-color: white;
+    color: #1DA1F2;
+}
+#follow:hover{
+    background-color: #1DA1F2;
+    color: white;
+}
+body{
+    display: flex;
+    min-height: 100vh;
+   
+} 

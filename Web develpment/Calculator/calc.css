@@ -1,0 +1,30 @@
+body{
+    min-height: 100vh;
+}
+input[type="button"]{
+    width: 100%;
+    cursor: pointer;
+    background-color: purple;
+    color: white;
+    padding: 20px 30px;
+    border: none 2px red;
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 20px;
+}
+table{
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+input[type="text"]{
+    padding: 20px 30px; 
+    font-size: 24px; 
+    font-weight: bold; 
+    border: none; 
+    border-radius: 5px; 
+    border: 2px none black; 
+    background-color: whitesmoke;   
+}

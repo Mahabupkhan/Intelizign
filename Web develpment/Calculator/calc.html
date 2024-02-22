@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='calc.css'>
+    
+</head>
+<body>
+    <table id="table">
+        <tr>
+            <td colspan="3"><input type="text" id="result"></td>
+            <td><input onclick="clearResult()" type="button" value="c"></td>
+        </tr>
+        <tr>
+            <td><input type="button" onclick="addToTextBox('1')" name="" value="1"></td>
+            <td><input type="button" onclick="addToTextBox('2')" name="" value="2"></td>
+            <td><input type="button" onclick="addToTextBox('3')" name="" value="3"></td>
+            <td><input type="button" onclick="addToTextBox('/')" name="" value="/"></td>
+        </tr>
+        <tr>
+            <td><input type="button" onclick="addToTextBox('4')" name="" value="4"></td>
+            <td><input type="button" onclick="addToTextBox('5')" name="" value="5"></td>
+            <td><input type="button" onclick="addToTextBox('6')" name="" value="6"></td>
+            <td><input type="button" onclick="addToTextBox('*')" name="" value="X"></td>
+        </tr>
+        <tr>
+            <td><input type="button" onclick="addToTextBox('7')" name="" value="7"></td>
+            <td><input type="button" onclick="addToTextBox('8')" name="" value="8"></td>
+            <td><input type="button" onclick="addToTextBox('9')" name="" value="9"></td>
+            <td><input type="button" onclick="addToTextBox('-')" name="" value="-"></td>
+        </tr>
+        <tr>
+            <td><input type="button" onclick="addToTextBox('0')" name="" value="0"></td>
+            <td><input type="button" onclick="addToTextBox('.')" name="" value="."></td>
+            <td><input type="button" onclick="showResult()" name="" value="="></td>
+            <td><input type="button" onclick="addToTextBox('+')"name="" value="+"></td>
+        </tr>
+    </table>
+</body>
+<script>
+    function addToTextBox(value){
+        document.getElementById("result").value+=value;
+    }
+    function clearResult(){
+        document.getElementById("result").value='';
+    }
+    function showResult(){
+        var a=document.getElementById("result");
+        try{
+            document.getElementById("result").value=eval(a.value);
+        }catch(error){
+            document.getElementById("result").value="Error";
+        }
+    }
+</script>
+</html>
