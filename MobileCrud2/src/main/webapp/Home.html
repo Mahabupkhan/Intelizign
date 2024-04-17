@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0">
+    <title>Mobile List</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            font-family:Arial;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .button-container button {
+            background-color: #4CAF50; /* Light green */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .button-container button:hover {
+            background-color: #45a049; /* Darker green */
+        }
+     
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <button onclick="location.href='/add-mobile'">Add</button>
+    </div>
+    <h2>Mobile List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Processor</th>
+                <th>Battery (mAh)</th>
+                <th>Camera (MP)</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="mobile : ${mobileList}">
+                <td th:text="${mobile.id}"></td>
+                <td th:text="${mobile.brand}"></td>
+                <td th:text="${mobile.model}"></td>
+                <td th:text="${mobile.processor}"></td>
+                <td th:text="${mobile.batteryMah}"></td>
+                <td th:text="${mobile.cameraMegaPixel}"></td>
+                <td th:text="${mobile.price}"></td>
+                <td>
+                
+				    
+	
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

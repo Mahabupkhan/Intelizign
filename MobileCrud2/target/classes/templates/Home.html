@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mobile List</title>
+    <style>
+        h2 {
+            text-align: center;
+            font-weight: bolder;
+            color: #0056b3;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 15%;
+            background-color: #333;
+            padding: 20px;
+            color: white;
+            height:100hv;
+            margin: 20px auto;
+            border-radius:7px;
+        }
+
+        .container {
+            width: 85%;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        .button-container button {
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .button-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .update-btn, .delete-btn {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+
+        .delete-btn {
+            background-color: #dc3545;
+        }
+
+        .delete-btn:hover {
+            background-color: darkred;
+        }
+
+        .update-btn:hover {
+            background-color: #0056b3;
+        }
+
+        th, td {
+            text-align: center;
+        }
+       .add-button{
+       		margin-top: 30px;
+       }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="button-container">
+            <button class="add-button" onclick="location.href='/add-mobile'">Add Mobile</button>
+        </div>
+        <div class="button-container">
+            <button class="add-admin-button" onclick="location.href='/add-admin'">Add Admin</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Mobiles List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Brand</th>
+                    <th>Model</th>
+                    <th>Processor</th>
+                    <th>Battery (mAh)</th>
+                    <th>Camera (MP)</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="mobile : ${mobileList}">
+                    <td th:text="${mobile.id}"></td>
+                    <td th:text="${mobile.brand}"></td>
+                    <td th:text="${mobile.model}"></td>
+                    <td th:text="${mobile.processor}"></td>
+                    <td th:text="${mobile.batteryMah}"></td>
+                    <td th:text="${mobile.cameraMegaPixel}"></td>
+                    <td th:text="${mobile.price}"></td>
+                    <td>
+                        <a th:href="@{'/delete-mobile/' + ${mobile.id}}" class="delete-btn" onclick="return confirm('Are you sure you want to delete this mobile?')">Delete</a>
+                        <a th:href="@{'/update-mobile/' + ${mobile.id}}" class="update-btn">Update</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
